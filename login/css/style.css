@@ -44,7 +44,7 @@
 .form button:hover,.form button:active,.form button:focus {
   background: #8E44AD
 }
-.form .message {
+.form .message, #errormsg, #errormsg2{
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
