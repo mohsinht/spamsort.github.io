@@ -101,6 +101,8 @@ var spamRef = dbRef.child('spammers');
  // else if(ikeywords!==''){
    //  document.getElementById("result").innerHTML= "You Searched for: " + text + " with keywords " + "\'" + ikeywords + "\'";
    //}
+
+   document.getElementById("newstyle").innerHTML = "";
 var found= false;
   spamRef.on("child_added", function(snap) {
     snap.forEach(function(childSnapshot) {
@@ -113,7 +115,7 @@ var found= false;
         {
           if(childData.toUpperCase()===qr){
           con++;
-          document.getElementById("newstyle").innerHTML = "";
+          document.getElementById("newstyle").innerHTML = " ";
 
           document.getElementById("result").innerHTML = "Found " + text + " in type \'" +key + "\' at " + con + " instances";
           if(con>10){
