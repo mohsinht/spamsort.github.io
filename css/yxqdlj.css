@@ -1,0 +1,82 @@
+// Strip the units from a value
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// Calculate ems from a px value
+@function em($px, $base-val: 16px) {
+  @if not unitless($px) {
+    $px: strip-units($px);
+  }
+  @if not unitless($base-val) {
+    $base-val: strip-units($base-val);
+  }
+  @return ($px / $base-val) * 1em;
+}
+
+// Managing Z-Layers & icon font names
+@function z($layer: "base") {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No z-index found in $z-layers map for '#{$layer}'. Property omitted.";
+  }
+  @return map-get($z-layers, $layer);
+}
+
+// Clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Sizing
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Align the right way
+@mixin align($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin visual-hide() {
+  border: 0;
+  clip: rect(0 0 0 0); height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin filter($opacity: 0.3, $background: #000) {
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: " ";
+    background: $background;
+    opacity: $opacity;
+    transition: opacity 0.3s ease;
+  }
+}

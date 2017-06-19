@@ -1,0 +1,19 @@
+#ajerez {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 9999;
+    
+    img{
+        box-sizing: border-box;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #7482A5;
+        transition: border-radius 0.2s ease-in-out;
+        
+        &:hover {
+            border-radius:30%;
+        }
+    }
+}
