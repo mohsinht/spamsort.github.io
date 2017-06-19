@@ -18,7 +18,7 @@
  <div class="title-container">
   <h1 class="title">You must be logged in to add a Spam case</h1>
   </div>
-<a href="#" class="myButton">Search Spammers</a>
+<a href="../" class="myButton">Search Spammers</a>
   <div class="login-page">
   <div class="form">
     <form class="register-form">
@@ -93,7 +93,6 @@ var login = function(){
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    alert("MOHSIN");
 window.location = "http://spamsort.com";
   }
 });
