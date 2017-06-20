@@ -58,6 +58,12 @@
   firebase.initializeApp(config);
 </script>
     <script> 
+       firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+window.location = "/form/";
+  }
+});
     var register=function(){
     var regName = document.getElementById("inName").value;
     var regPass = document.getElementById("inPass").value;
@@ -93,7 +99,7 @@ var login = function(){
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-window.location = "http://spamsort.com";
+window.location = "/form/";
   }
 });
 }
