@@ -1,3 +1,5 @@
+var fname, lname, email, ph, add, city, tobs, sid, info;
+
   $(document).ready(function() {
     $('#contact_form').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
@@ -113,9 +115,44 @@
             // Get the BootstrapValidator instance
             var bv = $form.data('bootstrapValidator');
 
+
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 console.log(result);
             }, 'json');
         });
+
 });
+
+
+var submitSpam = function(){
+
+var fname = $("input[name=first_name]").val();
+var lname = $("input[name=last_name]").val();
+var email = $("input[name=email]").val();
+var ph = $("input[name=phone]").val();
+var add = $("input[name=address]").val();
+var city = $("input[name=city]").val();
+var tobs= $("input[name=tobs]").val();
+var sid= $("input[name=website]").val();
+var info= document.getElementById("desc").value;
+
+
+var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
+var spamRef = dbRef.child('spammers');
+console.log(info);
+spamRef.push({
+    first_name: fname,
+    last_name:lname,
+    email: email,
+    phone: ph,
+    address: add,
+    city: city,
+    tobs: tobs,
+    socialID: sid,
+    description:info
+});
+
+alert("SUCCESS");
+window.location = "../index.html#success";
+}
