@@ -1,4 +1,9 @@
-var fname, lname, email, ph, add, city, tobs, sid, info;
+   firebase.auth().onAuthStateChanged(function(user) {
+  if (!user) {
+    // User is signed in.
+window.location = "../login/index.html";
+  }
+});
 
   $(document).ready(function() {
     $('#contact_form').bootstrapValidator({
