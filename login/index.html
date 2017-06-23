@@ -95,11 +95,12 @@ var login = function(){
       console.log(errorCode);
   // ...
 });
+  alert("Successfully logged in!")
    document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-window.location = "form/index.html";
+window.location = "../form/index.html";
   }
 });
 }
