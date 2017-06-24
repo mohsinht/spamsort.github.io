@@ -147,6 +147,7 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 console.log(info);
 spamRef.push({
+    
     first_name: fname,
     last_name:lname,
     email: email,

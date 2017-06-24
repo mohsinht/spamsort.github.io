@@ -21,18 +21,18 @@
 }
 @-webkit-keyframes color-1 {
   0% {
-    background-color: #EB73B9;
+    background-color: #F5D76E;
   }
   100% {
-    background-color: #17EAD9;
+    background-color: #F5D76E;
   }
 }
 @keyframes color-1 {
   0% {
-    background-color: #EB73B9;
+    background-color: #F5D76E;
   }
   100% {
-    background-color: #17EAD9;
+    background-color: #F5D76E;
   }
 }
 ::-moz-selection {
@@ -57,7 +57,7 @@ body {
   position: relative;
   width: 100%;
   height: 86vh;
-  background-color: #f2ecec;
+  background-color: #F5D76E;
   color: #4B4848;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -48,14 +48,14 @@ var found= false;
 
           document.getElementById("result").innerHTML = "Found " + text + " in type \'" +key + "\' at " + con + " instances";
           if(con>10){
+            foundMultipleTimes();
             document.getElementById("result").innerHTML = "Found " + text + " multiple times (10+)";
             document.getElementById("result2").innerHTML = "Try narrowing down your search by adding keywords, i.e location, business, middle name etc.";
           }
           found = true;
 
           if(con===1){
-             document.getElementById("result").innerHTML = "Found";
-             document.getElementById("newstyle").innerHTML = "#result-heading,#result2{display:none;}   .box2 {width: 150px;height: 150px;} #result{color:#92F22A;font-family: raleway;font-weight:900 !important;";
+            foundSpammer();
           }
           else{
             
@@ -74,8 +74,28 @@ var found= false;
     });
 
     if(!found){
-      document.getElementById("newstyle").innerHTML = " .box2 {width: 700px;height: 150px;}";
+      CantfoundSpammer();
+      
       document.getElementById("result").innerHTML = "Can't find " + text;
     }
 });
+}
+
+
+
+var CantfoundSpammer = function(){
+  document.getElementById("newstyle").innerHTML = " .box2 {width: 700px;height: 150px;}";
+  document.getElementById("newstyle").innerHTML = "body{background-color: #E74C3C !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}";
+}
+
+
+var foundSpammer = function(){
+   document.getElementById("result").innerHTML = "Found";
+             document.getElementById("newstyle").innerHTML = "body{background-color: #2ECC71 !important;} #result-heading,#result2{display:none;}   .box2 {width: 150px;height: 150px;} #result{color:#92F22A;font-family: raleway;font-weight:900 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}";
+  
+}
+
+
+var foundMultipleTimes = function(){
+  document.getElementById("newstyle").innerHTML = "body{background-color: #6BB9F0 !important;} .title-container .title-down{ color: #fff !important;} .title-container .title{ color: #fff !important;}";
 }
