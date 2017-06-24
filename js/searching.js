@@ -1,6 +1,9 @@
 var search=function() {
   con=0;
 var text = document.getElementById("text").value;
+if(!validateKeyword(text)){
+return;
+}
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 //document.getElementById("result").innerHTML = text;
@@ -45,8 +48,9 @@ var found= false;
           if(childData.toUpperCase()===qr){
           con++;
           document.getElementById("newstyle").innerHTML = " ";
+          var skey = nameKey(key);
+          document.getElementById("result").innerHTML = "Found " + text + " in type \'" +skey + "\' at " + con + " instances";
 
-          document.getElementById("result").innerHTML = "Found " + text + " in type \'" +key + "\' at " + con + " instances";
           if(con>10){
             foundMultipleTimes();
             document.getElementById("result").innerHTML = "Found " + text + " multiple times (10+)";
@@ -98,4 +102,43 @@ var foundSpammer = function(){
 
 var foundMultipleTimes = function(){
   document.getElementById("newstyle").innerHTML = "body{background-color: #6BB9F0 !important;} .title-container .title-down{ color: #fff !important;} .title-container .title{ color: #fff !important;}";
+}
+
+
+var nameKey = function(key){
+    if(key === 'first_name'){
+      return "First Name";
+    }
+    else if(key === 'last_name'){
+      return "Last Name";
+    }
+    else if(key === 'address'){
+      return "Address";
+    }
+    else if(key === 'phone'){
+      return "Phone Number";
+    }
+    else if(key === 'email'){
+      return "Email Address";
+    }
+    else if(key === 'socialID'){
+      return "Social ID";
+    }
+    else if(key === 'tobs'){
+      return "Type of Business";
+    }
+}
+
+var validateKeyword = function(search){
+  for(var i=0; i<search.length; i++)
+  {
+    if(search[i] === '+' || search[i] === '-' || search[i] === '/' || search[i] === '*' || search[i] === '.' || search[i] === '\'' || search[i] === '$' || search[i] === '#' || search[i] === '"' || search[i] === '_' || search[i] === '=' || search[i] === '%')
+    {
+      document.getElementById("result").innerHTML = "Invalid Characters";
+      return false;
+    }
+else{
+return true;
+}
+  }
 }
