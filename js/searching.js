@@ -137,8 +137,10 @@ var validateKeyword = function(search){
       document.getElementById("result").innerHTML = "Invalid Characters";
       return false;
     }
-else{
-return true;
+    else{
+      return true;
+        }
+    }
 }
-  }
-}
+
+
