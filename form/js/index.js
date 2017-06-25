@@ -169,7 +169,10 @@ spamRef.push({
 console.log(fname + lname + email + ph + add);
 
 
-
+setTimeout(function() {
+    alert("SUCCESS: Redirecting you!");
+  window.location = "../index.html#success";
+}, 5000);
 
 
 }
