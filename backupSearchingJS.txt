@@ -1,0 +1,36 @@
+if(con>10){
+          return;
+        }
+
+        if(typeof childData ==='string' )
+        {
+          if(childData.toUpperCase()===qr){
+
+          con++;
+          document.getElementById("newstyle").innerHTML = " ";
+          var skey = nameKey(key);
+          document.getElementById("result").innerHTML = "Found " + text + " in type \'" +skey + "\' at " + con + " instances";
+
+          if(con>10){
+            foundMultipleTimes();
+            document.getElementById("result").innerHTML = "Found " + text + " multiple times (10+)";
+            document.getElementById("result2").innerHTML = "Try narrowing down your search by adding keywords, i.e location, business, middle name etc.";
+          }
+          found = true;
+
+          if(con===1){
+            foundSpammer();
+          }
+          else{
+            
+          }
+
+        }
+        else{
+          //if(ilocName!==''){
+            //if(childData.city === ilocName){
+              //console.log("Matched location");
+            //}
+          //}
+ 
+    }
