@@ -4,7 +4,10 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
   
   con=0;
-var text = document.getElementById("text").value;
+
+var text = 'undefined'; 
+text = document.getElementById("text").value;
+
 if(!validateKeyword(text));
 
 //document.getElementById("result").innerHTML = text;
