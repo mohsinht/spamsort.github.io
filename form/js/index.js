@@ -131,6 +131,7 @@ window.location = "../login/index.html";
 
 
 var submitSpam = function(){
+
   firebase.auth().onAuthStateChanged(function(user) {
   if (!user) {
     // User is signed in.
@@ -164,6 +165,14 @@ spamRef.push({
     description:info
 });
 
-alert("SUCCESS");
-window.location = "../index.html#success";
+
+console.log(fname + lname + email + ph + add);
+
+
+setTimeout(function() {
+    alert("SUCCESS: Redirecting you!");
+  window.location = "../index.html#success";
+}, 5000);
+
+
 }
