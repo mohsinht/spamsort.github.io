@@ -1,11 +1,12 @@
 var search=function() {
-  con=0;
-var text = document.getElementById("text").value;
-if(!validateKeyword(text)){
-return;
-}
+
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
+  
+  con=0;
+var text = document.getElementById("text").value;
+if(!validateKeyword(text));
+
 //document.getElementById("result").innerHTML = text;
   var text = document.getElementById("text").value;
   var qr = text.toUpperCase();

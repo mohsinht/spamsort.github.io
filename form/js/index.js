@@ -131,7 +131,12 @@ window.location = "../login/index.html";
 
 
 var submitSpam = function(){
-
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (!user) {
+    // User is signed in.
+window.location = "../login/index.html";
+  }
+});
 var fname = $("input[name=first_name]").val();
 var lname = $("input[name=last_name]").val();
 var email = $("input[name=email]").val();
@@ -141,7 +146,7 @@ var city = $("input[name=city]").val();
 var tobs= $("input[name=tobs]").val();
 var sid= $("input[name=website]").val();
 var info= document.getElementById("desc").value;
-
+console.log(fname);
 
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
