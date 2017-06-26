@@ -56,7 +56,7 @@ Because the website is in beta testing mode and many features are yet to be adde
 are yet to be handled. Be precise in your searches to get best results.
 
 
-## Info about website:
+## Info about code:
 
 The website is completely built through JS, HTML and CSS. No major framework is used, except SASS, which has 
 some CSS design part implemented. FIREBASE is used as database of the project. The website has realtime searching
