@@ -1,5 +1,7 @@
 This code is for the project SpamSort which is currently listed on SpamSort.com
 
+## FAQ
+
 #### What is spamsort?
 
 SpamSort is a website to list all the spammers, frauds and scammers around you. It enlists spam cases so that
