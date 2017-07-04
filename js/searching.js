@@ -204,13 +204,27 @@ var validateKeyword = function(search){
 
 var displayInfo = function(obj){
   console.log(obj);
+  if(obj.first_name !=="" || obj.last_name !==""){
   document.getElementById("popupHeading").innerHTML = obj.first_name + " " + obj.last_name;
+}
+  if(obj.email !== ""){
   document.getElementById("details").innerHTML = "<b>Email: </b>" + obj.email; 
+}
+  if(obj.phone !== ""){
   document.getElementById("details").innerHTML += "<br><b>Phone: </b>" + obj.phone; 
+}
+    if(obj.city !== ""){
   document.getElementById("details").innerHTML += "<br><b>City: </b>" + obj.city; 
+}
+  if(obj.tobs !== ""){
   document.getElementById("details").innerHTML += "<br><b>Type of Business: </b>" + obj.tobs; 
+}
+  if(obj.socialID !== ""){
   document.getElementById("details").innerHTML += "<br><b>Social ID: </b>" + obj.socialID; 
+}
+  if(obj.description !== ""){
   document.getElementById("details").innerHTML += "<br><b>Description: </b><br>" + "<div style=\"padding-left:1em;\">" + obj.description; 
+}
 }
 
 
