@@ -75,3 +75,36 @@ Thank you for visting and viewing my code.
 Regards,
 
 Mohsin Hayat
+
+
+
+## Raw Data [For Testing]
+
+#### 1
+First Name: Lorem
+Last Name: Ipsum
+Social Id: lorem.ipsum
+Type Of Business: Internet Spammer
+
+#### 2
+Email: dummyemail@dummy.com
+Description: This person didn't deliver the product that I ordered. I've paid him.
+
+#### 3
+Phone: 03123456789
+Description: This person did spam calls to my number
+
+#### 4
+First Name: Dummy
+Last Name: DumDum
+City: London
+
+#### 5
+First Name: Spammer
+Last Name: Spammed
+Email: spammer@spamsort.com
+
+#### 6
+First Name: Spam
+Last Name: Sort
+Email: spamsort@spamsort.com
