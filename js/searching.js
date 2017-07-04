@@ -19,6 +19,23 @@ if(!validateKeyword(text));
 //  var keywords = ikeywords.toUpperCase();
 
 //console.log(locName);
+
+
+  var goForward = true;
+  for(var s=0; s<qr.length; s++){
+    if(!(isAlphaNumeric(qr[s]))){
+      goForward=false;
+    }
+  }
+if(!goForward){
+  CantfoundSpammer();
+  document.getElementById("result").innerHTML = "Invalid Characters";
+  return ;
+}
+
+
+
+
   console.log(qr);
           if((qr==="STOP") || (text === "") || (text === null))
           {
@@ -191,3 +208,22 @@ var displayInfo = function(obj){
   document.getElementById("details").innerHTML += "<br><b>Social ID: </b>" + obj.socialID; 
   document.getElementById("details").innerHTML += "<br><b>Description: </b><br>" + "<div style=\"padding-left:1em;\">" + obj.description; 
 }
+
+
+
+
+
+function isAlphaNumeric(str) {
+  var code, i, len;
+
+  for (i = 0, len = str.length; i < len; i++) {
+    code = str.charCodeAt(i);
+    if (!(code > 47 && code < 58) && // numeric (0-9)
+        !(code > 64 && code < 91) && // upper alpha (A-Z)
+        !(code===32) &&  
+        !(code > 96 && code < 123)) { // lower alpha (a-z)
+      return false;
+    }
+  }
+  return true;
+};
