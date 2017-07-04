@@ -190,7 +190,7 @@ var validateKeyword = function(search){
 
 
 var displayInfo = function(obj){
-  console.log(obj);
+  document.getElementById("details").innerHTML="";
   if(obj.first_name !=="" || obj.last_name !==""){
   document.getElementById("popupHeading").innerHTML = obj.first_name + " " + obj.last_name;
 }
