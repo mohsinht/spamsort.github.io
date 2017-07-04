@@ -764,12 +764,12 @@ font-size: 20px;
 
 
  @media only screen and (max-width: 500px) {
-    .myButton{
-            left: 0;
-    width: 94%;
+.myButton {
+    left: 25%;
+    width: 42%;
     text-align: center;
-
-    }
+    font-size: 10px;
+}
 .box2 {
     width:400px;
   }
@@ -798,16 +798,37 @@ font-size: 20px;
 font-size: 25px;
   }
 
+  .field {
+    border: 0;
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    padding: 10px 13px;
+}
+
+.icon-search {
+display:none;
+  }
+
+
+#result-heading{
+      font-size: 1em;
+    margin: 1.67em 0;
+}
+
+#result{
+  font-size: 16px !important;
+}
+#result2{
+  font-size: 15px !important;
+}
+
 }
 
 
 
  @media only screen and (max-width: 450px) {
-.field {
-    border: 0;
-    width: 135%;
-    margin-left: -63px;
-  }
+
 .icons-container {
     position: absolute;
     top: 11px;
