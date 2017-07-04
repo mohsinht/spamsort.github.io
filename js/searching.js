@@ -28,8 +28,8 @@ if(!validateKeyword(text));
     }
   }
 if(!goForward){
-  CantfoundSpammer();
-  document.getElementById("result").innerHTML = "Invalid Characters";
+  invalidCharacters();
+  //document.getElementById("result").innerHTML = "Invalid Characters";
   return ;
 }
 
@@ -39,6 +39,7 @@ if(!goForward){
   console.log(qr);
           if((qr==="STOP") || (text === "") || (text === null))
           {
+            invalidCharacters();
             document.getElementById("result").innerHTML="<div style=\"color:#D91E18\">Name is empty</div>";
              document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
             return;
@@ -156,6 +157,13 @@ var foundMultipleTimes = function(){
     document.getElementById("result").innerHTML="<div style=\"color:#446CB3\">There are many spammers with this keyword</div>";
   document.getElementById("result2").innerHTML = "Narrow down your search by adding last name or social ID or any keyword";
   document.getElementById("newstyle").innerHTML = "body{background-color: #6BB9F0 !important;} .title-container .title-down{ color: #fff !important;} .title-container .title{ color: #fff !important;}  a.btn {display: none;}";
+}
+
+
+var invalidCharacters = function(){
+    document.getElementById("result").innerHTML="<div style=\"color:#F9BF3B\">Invalid Characters</div>";
+  document.getElementById("result2").innerHTML = "Use only alphanumeric keywords";
+ document.getElementById("newstyle").innerHTML = "body{background-color: #F9BF3B !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: none;}";
 }
 
 

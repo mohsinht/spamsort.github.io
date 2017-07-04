@@ -1,0 +1,15 @@
+    var regName = document.getElementById("inName").value;
+    var regPass = document.getElementById("inPass").value;
+    var regEmail = document.getElementById("inEmail").value;
+    console.log(regEmail); console.log(regPass); console.log(regName);
+
+      firebase.auth().createUserWithEmailAndPassword(regEmail, regPass).catch(function(error) {
+  // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+document.getElementById("errormsg").innerHTML = errorMessage;
+      console.log(errorMessage);
+      console.log(errorCode);
+  // ...
+    });
