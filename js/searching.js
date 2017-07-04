@@ -157,9 +157,9 @@ var foundMultipleTimes = function(){
 
 
 var invalidCharacters = function(){
-    document.getElementById("result").innerHTML="<div style=\"color:#F9BF3B\">Invalid Characters</div>";
+    document.getElementById("result").innerHTML="<div style=\"color:#6C7A89\">Invalid Characters</div>";
   document.getElementById("result2").innerHTML = "Use only alphanumeric keywords";
- document.getElementById("newstyle").innerHTML = "body{background-color: #F9BF3B !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: none;}";
+ document.getElementById("newstyle").innerHTML = "body{background-color: #36D7B7 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: none;}";
 }
 
 
