@@ -6,22 +6,10 @@ var text = 'undefined';
 text = document.getElementById("text").value;
 
 if(!validateKeyword(text));
-
-//document.getElementById("result").innerHTML = text;
   var text = document.getElementById("text").value;
   var qr = text.toUpperCase();
   var locCheck = false;
   var query = qr.split(" ");
-  console.log(query);
-
-//  var ilocName = document.getElementById("loc").value;
-//  var locName = ilocName.toUpperCase();
-//  var ikeywords = document.getElementById("keys").value;
-//  var keywords = ikeywords.toUpperCase();
-
-//console.log(locName);
-
-
   var goForward = true;
   for(var s=0; s<query.length; s++){
     if(!(isAlphaNumeric(query[s]))){
@@ -37,7 +25,6 @@ if(!goForward){
             document.getElementById("result").innerHTML="<div style=\"color:#D91E18\">Name is empty</div>";
              document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
   }
-  //document.getElementById("result").innerHTML = "Invalid Characters";
   return ;
 }
    document.getElementById("result").innerHTML= "You Searched for: " + text;
