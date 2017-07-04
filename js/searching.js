@@ -13,6 +13,7 @@ if(!validateKeyword(text));
   var locCheck = false;
   var query = qr.split(" ");
   console.log(query);
+
 //  var ilocName = document.getElementById("loc").value;
 //  var locName = ilocName.toUpperCase();
 //  var ikeywords = document.getElementById("keys").value;
@@ -22,28 +23,23 @@ if(!validateKeyword(text));
 
 
   var goForward = true;
-  for(var s=0; s<qr.length; s++){
-    if(!(isAlphaNumeric(qr[s]))){
+  for(var s=0; s<query.length; s++){
+    if(!(isAlphaNumeric(query[s]))){
+      goForward=false;
+    }
+    if(!(query[s]!=="")){
       goForward=false;
     }
   }
 if(!goForward){
   invalidCharacters();
+  if(qr===""){
+            document.getElementById("result").innerHTML="<div style=\"color:#D91E18\">Name is empty</div>";
+             document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
+  }
   //document.getElementById("result").innerHTML = "Invalid Characters";
   return ;
 }
-
-
-
-
-  console.log(qr);
-          if((qr==="STOP") || (text === "") || (text === null))
-          {
-            invalidCharacters();
-            document.getElementById("result").innerHTML="<div style=\"color:#D91E18\">Name is empty</div>";
-             document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
-            return;
-          }
    document.getElementById("result").innerHTML= "You Searched for: " + text;
    var spam = [];
 var count;
@@ -122,7 +118,7 @@ var objects= [];
     if(countMax>1){
       foundMultipleTimes();
     }
-    if(countMax===1){
+    else if(countMax===1){
       foundSpammer();
       displayInfo(objects[index]);
     }
@@ -227,8 +223,7 @@ function isAlphaNumeric(str) {
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
     if (!(code > 47 && code < 58) && // numeric (0-9)
-        !(code > 64 && code < 91) && // upper alpha (A-Z)
-        !(code===32) &&  
+        !(code > 64 && code < 91) && // upper alpha (A-Z) 
         !(code > 96 && code < 123)) { // lower alpha (a-z)
       return false;
     }
