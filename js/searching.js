@@ -211,7 +211,6 @@ function CantfoundSpammer() {
 function foundSpammer() {
 	document.getElementById("result").innerHTML = "Found";
 	document.getElementById("newstyle").innerHTML = "body{background-color: #2ECC71 !important;} #result-heading,#result2{display:none;}   .box2 {    top: 55%;width: 150px;height: 150px;} #result{color:#92F22A;font-family: raleway;font-weight:900 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: block;}";
->>>>>>> origin/gh-pages
   
 }
 
@@ -298,7 +297,7 @@ function displayInfo(obj) {
 	if (obj.description !== "") {
 		details.innerHTML += "<br><b>Description: </b><br>" + "<div style=\"padding-left:1em;\">" + obj.description; 
 	}
->>>>>>> origin/gh-pages
+
 }
 
 function isAlphaNumeric(str) {
