@@ -1,6 +1,8 @@
+//-----------------Firebase Api--------------------
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 
+//-----------------Main Search Function------------
 var search=function() {
 var text = 'undefined'; 
 text = document.getElementById("text").value;
@@ -43,12 +45,10 @@ var objects= [];
         var childData = childSnapshot.val(); //Value inside chil
         if(typeof childData ==='string' )
         {
-          //console.log(childData);
           for(var i=0;i<query.length;i++){
             if(query[i] ===childData.toUpperCase() )
             {
                count++;
-               console.log(count);
             }
           }
         }
@@ -60,9 +60,9 @@ var objects= [];
     spam[spamNum] = count;
     spamNum++;
 });
- // console.log(spam);
+
  var index;
- console.log(spam.length);
+
 
   //----------Checking if all Spammer searched score is ZERO----------
   var check = false;  
@@ -72,7 +72,6 @@ var objects= [];
       }
   }
   if(check === false){
-      console.log("CANT FIND SPAMMER!");
       CantfoundSpammer();
   }
   //-------------------------------------------------------------------
@@ -90,7 +89,6 @@ var objects= [];
             index = k;
           }
     }
-    console.log("MAX = " + max);
     //-----------------------------------------------------------------
 
     //--------Finding if the max value is redundant--------------------
@@ -224,6 +222,7 @@ function isAlphaNumeric(str) {
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
     if (!(code > 47 && code < 58) && // numeric (0-9)
+        !(code === 46 || code===45 || code===95 || code===64) && // . - _  @ (dot, dash, underscore, at-the-rate) 
         !(code > 64 && code < 91) && // upper alpha (A-Z) 
         !(code > 96 && code < 123)) { // lower alpha (a-z)
       return false;
