@@ -3,119 +3,106 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 
 //-----------------Main Search Function------------
-var search=function() {
-var text = 'undefined'; 
-text = document.getElementById("text").value;
+var search=function() 
+  {
+    var text = document.getElementById("text").value;
+    var qr = text.toUpperCase();
+    var query = qr.split(" ");
+    var goForward = true;
 
-if(!validateKeyword(text));
-  var text = document.getElementById("text").value;
-  var qr = text.toUpperCase();
-  var locCheck = false;
-  var query = qr.split(" ");
-  var goForward = true;
-  for(var s=0; s<query.length; s++){
-    if(!(isAlphaNumeric(query[s]))){
-      goForward=false;
+    for(var s=0; s<query.length; s++){
+       if(!(isAlphaNumeric(query[s]))){
+         goForward=false;
+       }
+       if(!(query[s]!=="")){
+         goForward=false;
+      } 
     }
-    if(!(query[s]!=="")){
-      goForward=false;
+
+    if(!goForward){
+      invalidCharacters();
+      if(qr===""){
+                document.getElementById("result").innerHTML="<div style=\"color:#4B77BE\">Name is empty</div>";
+                 document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
+      }
+      return ;
     }
-  }
-if(!goForward){
-  invalidCharacters();
-  if(qr===""){
-            document.getElementById("result").innerHTML="<div style=\"color:#D91E18\">Name is empty</div>";
-             document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
-  }
-  return ;
-}
-   document.getElementById("result").innerHTML= "You Searched for: " + text;
-   var spam = [];
-var count;
-var spamNum = 0;
-   document.getElementById("newstyle").innerHTML = "";
-var found= false;
-var objects= [];
-  spamRef.on("child_added", function(snap) {
-    objects.push(snap.val());
-    count=0;
-    
-    snap.forEach(function(childSnapshot) {
+
+    var spam = [];
+    var count;
+    var spamNum = 0;
+    var objects= [];
+    spamRef.on("child_added", function(snap) 
+    {
+      objects.push(snap.val());
+      count=0;
+        
+      snap.forEach(function(childSnapshot) 
+      {
         var key = childSnapshot.key(); //Key is the child name, like "name", "email" etc.
         var childData = childSnapshot.val(); //Value inside chil
         if(typeof childData ==='string' )
         {
-          for(var i=0;i<query.length;i++){
+          for(var i=0;i<query.length;i++)
+          {
             if(query[i] ===childData.toUpperCase() )
             {
-               count++;
+              count++;
             }
           }
         }
-        
-
-
-        
+      });
+        spam[spamNum] = count;
+        spamNum++;
     });
-    spam[spamNum] = count;
-    spamNum++;
-});
 
- var index;
+    var index;
 
 
-  //----------Checking if all Spammer searched score is ZERO----------
-  var check = false;  
-  for(var k=0; k<spam.length; k++){
+      //----------Checking if all Spammer searched score is ZERO----------
+    var check = false;  
+    for(var k=0; k<spam.length; k++){
       if(spam[k]!==0){
         check = true;
+        }
       }
-  }
-  if(check === false){
-      CantfoundSpammer();
-  }
-  //-------------------------------------------------------------------
+      if(check === false){
+          CantfoundSpammer();
+      }
+      //-------------------------------------------------------------------
 
 
-  //----------Finding the highest score among the searched-------------
-  else
-  {
-    var max = 0;
-    for(var k=0; k<spam.length; k++)
-    {
+      //----------Finding the highest score among the searched-------------
+      else
+      {
+        var max = 0;
+        for(var k=0; k<spam.length; k++)
+        {
           if(spam[k]>max)
           {
             max = spam[k];
             index = k;
           }
-    }
-    //-----------------------------------------------------------------
+        }
 
-    //--------Finding if the max value is redundant--------------------
-    var countMax=0;
-    for(var k=0; k<spam.length; k++)
-    {
+        //--------Finding if the max value is redundant--------------------
+        var countMax=0;
+        for(var k=0; k<spam.length; k++)
+        {
           if(spam[k]===max)
           {
-            countMax++;
+          countMax++;
           }
-    }    
-    if(countMax>1){
-      foundMultipleTimes();
-    }
-    else if(countMax===1){
-      foundSpammer();
-      displayInfo(objects[index]);
-    }
-    //-----------------------------------------------------------------
-
-
+        }    
+        if(countMax>1){
+          foundMultipleTimes();
+        }
+        else if(countMax===1){
+          foundSpammer();
+          displayInfo(objects[index]);
+        }
+      }
   }
-
-  //-------------------------------------------------------------------
-
-
-}
 
 
 
@@ -169,20 +156,6 @@ var nameKey = function(key){
     }
     else if(key === 'tobs'){
       return "Type of Business";
-    }
-}
-
-var validateKeyword = function(search){
-  for(var i=0; i<search.length; i++)
-  {
-    if(search[i] === '+' || search[i] === '-' || search[i] === '/' || search[i] === '*' || search[i] === '.' || search[i] === '\'' || search[i] === '$' || search[i] === '#' || search[i] === '"' || search[i] === '_' || search[i] === '=' || search[i] === '%')
-    {
-      document.getElementById("result").innerHTML = "Invalid Characters";
-      return false;
-    }
-    else{
-      return true;
-        }
     }
 }
 
