@@ -204,6 +204,4 @@ function isAlphaNumeric(str) {
   return true;
 <<<<<<< HEAD
 };
-=======
 };
->>>>>>> origin/gh-pages
