@@ -225,7 +225,8 @@ body {
 
 
 
-.rc-anchor-light.rc-anchor-normal {
-    border: 1px solid #d3d3d3;
-    width: 267px !important;
+
+.rc-anchor-normal {
+    height: 74px;
+    width: 268px !important;
 }
