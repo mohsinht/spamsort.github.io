@@ -3,8 +3,7 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 
 //-----------------Main Search Function------------
-var search=function() 
-{
+var search=function() {
 
     var text = document.getElementById("text").value;
     var qr = text.toUpperCase();
@@ -103,7 +102,7 @@ var search=function()
           displayInfo(objects[index]);
         }
       }
-    }
+}
 
 
 

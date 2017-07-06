@@ -10,7 +10,7 @@
   
       
       <div id="iic"><link rel="stylesheet" href="css/style.css"></div>
-  
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -22,10 +22,24 @@
   <div class="login-page">
   <div class="form">
     <form class="register-form">
-      <input id="inName" type="text" placeholder="name"/>
+      <p style="text-align: left"> Login Info </p>
+      <input id="inName" type="text" placeholder="your name"/>
       <input id = "inPass" type="password" placeholder="password"/>
       <input id = "inEmail" type="text" placeholder="email address"/>
-      <button type="button" onclick="register()">create</button>
+      <p style="text-align: left"> Details </p>
+      <input id = "inTob" type="text" placeholder="Type Of Business (Freelancer, Restaurant, Agency etc)"/>
+      <input id = "inCoName" type="text" placeholder="company name (optional)"/>
+      <input id = "inCoAdd" type="text" placeholder="company address (optional)"/>
+      <input id = "inCoWeb" type="text" placeholder="company website (optional)"/>
+      <select id="numOfSpam">
+        <option value="1" selected="selected">1-2</option>
+        <option value="2">2-10</option>
+        <option value="3">10+</option>
+      </select>
+      <textarea id="info" name="message" placeholder="Tell us about yourself" rows="10" cols="30"></textarea>
+      <div class="g-recaptcha" data-sitekey="6LeMKygUAAAAAM78OnXkU6E4AUZCxYBLPm7YuG0P"></div>
+      <div style="padding-bottom: 10px"></div>
+      <button type="button" onclick="register()">request an account</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
       <p class="message"><p id="errormsg" style="color:red"></p>
     </form>
@@ -33,7 +47,7 @@
       <input id="logEmail" type="text" placeholder="email"/>
       <input id= "logPass" type="password" placeholder="password"/>
       <button type="button" onclick="login()">login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <p class="message">Not registered? <a href="#">Request An Account</a></p>
       <p class="message"><p id="errormsg2" style="color:red"></p>
     </form>
   </div>
@@ -45,56 +59,6 @@
     <script src="js/index.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDcvxKgsZCAaeRfqDe0PlPcgESZDwuJwAU",
-    authDomain: "friendlychat-c4e05.firebaseapp.com",
-    databaseURL: "https://friendlychat-c4e05.firebaseio.com",
-    projectId: "friendlychat-c4e05",
-    storageBucket: "friendlychat-c4e05.appspot.com",
-    messagingSenderId: "63768838798"
-  };
-  firebase.initializeApp(config);
-</script>
-    <script> 
-       firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-window.location = "/form/";
-  }
-});
-    var register=function(){
-
-       document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">Sorry, but we are preventing our \"Spamming\" website from spam. You must contact info@hubover.com to create an account.</div>";
-  }
-
-var login = function(){
-  var logEmail = document.getElementById("logEmail").value;
-  var logPass = document.getElementById("logPass").value;
-  firebase.auth().signInWithEmailAndPassword(logEmail, logPass).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  document.getElementById("errormsg2").innerHTML = errorMessage;
-      console.log(errorMessage);
-      console.log(errorCode);
-  // ...
-});
-  alert("Successfully logged in!")
-   document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
-   firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-window.location = "../form/index.html";
-  }
-});
-}
-
-
-
-
-    </script>
-
+<script src="js/form.js"></script>
 </body>
 </html>
