@@ -202,6 +202,5 @@ function isAlphaNumeric(str) {
     }
   }
   return true;
-<<<<<<< HEAD
 };
 };
