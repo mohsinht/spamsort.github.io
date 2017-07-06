@@ -189,7 +189,7 @@ var displayInfo = function(obj){
 
 
 
-function isAlphaNumeric(str) {
+var isAlphaNumeric = function(str) {
   var code, i, len;
 
   for (i = 0, len = str.length; i < len; i++) {
@@ -202,5 +202,4 @@ function isAlphaNumeric(str) {
     }
   }
   return true;
-};
 };
