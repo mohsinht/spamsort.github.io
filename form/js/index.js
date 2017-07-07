@@ -1,3 +1,5 @@
+   
+
    firebase.auth().onAuthStateChanged(function(user) {
   if (!user) {
     // User is signed in.
@@ -96,9 +98,9 @@ window.location = "../login/index.html";
             comment: {
                 validators: {
                       stringLength: {
-                        min: 10,
+                        min: 20,
                         max: 200,
-                        message:'Please enter at least 10 characters and no more than 200'
+                        message:'Please enter at least 20 characters and no more than 200'
                     },
                     notEmpty: {
                         message: 'Please supply a description of your project'
@@ -131,11 +133,14 @@ window.location = "../login/index.html";
 
 
 var submitSpam = function(){
-
   firebase.auth().onAuthStateChanged(function(user) {
   if (!user) {
     // User is signed in.
 window.location = "../login/index.html";
+  }
+  else{
+    uEmail = user.email;
+
   }
 });
 var fname = $("input[name=first_name]").val();
@@ -147,13 +152,26 @@ var city = $("input[name=city]").val();
 var tobs= $("input[name=tobs]").val();
 var sid= $("input[name=website]").val();
 var info= document.getElementById("desc").value;
-console.log(fname);
+
+if((fname==="" || lname==="") && email==="" && ph==="" &&  sid===""){
+    alert("Fill in atlease Name, email, ph No or social ID");
+    return;
+}
+if(info.length<20){
+    alert("Info must be at least 20 characters long");
+    return;
+}
+
+
+
+var curuser = firebase.auth().currentUser;
+
+    console.log(fname);
 
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 console.log(info);
 spamRef.push({
-    
     first_name: fname,
     last_name:lname,
     email: email,
@@ -162,7 +180,8 @@ spamRef.push({
     city: city,
     tobs: tobs,
     socialID: sid,
-    description:info
+    description:info,
+    addedBy: curuser.email
 });
 
 

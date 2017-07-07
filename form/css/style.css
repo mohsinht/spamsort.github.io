@@ -149,8 +149,46 @@ body {
 
 .container {
   z-index:-1;
-    margin-top: 200px;
+    margin-top: 140px;
     background-color: white;
         box-shadow: 0px 20px 20px 0px black;
 
+}
+
+
+
+/* Arrow Styling */
+.backArrow{
+font-size: 51px;
+    line-height: 26px;
+    width: 1em;
+    height: 1em;
+    padding: 11px;
+    padding-left: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(180deg);
+    color: white;
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+  }
+
+.backArrow:hover {
+    background: rgba(255,255,255,.5);
+}
+.backArrow:active {
+    position: relative;
+    right: 2px;
+}
+
+/* Document Styling */
+
+.containerback {
+padding-top: 2em;
+    margin: auto 6%;
 }

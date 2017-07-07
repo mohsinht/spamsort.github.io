@@ -10,8 +10,12 @@
   firebase.initializeApp(config);
        firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+  document.getElementById("lt").innerHTML = ".logout{display: inherit !important;}"
     // User is signed in.
 //window.location = "/form/";
+  }
+  else{
+    document.getElementById("lt").innerHTML = ".logout{display: none;}"
   }
 });
    
@@ -24,8 +28,6 @@ var register=function(){
   var cname = document.getElementById("inCoName").value;
   var cadd = document.getElementById("inCoAdd").value;
   var cweb = document.getElementById("inCoWeb").value;
-  var e = document.getElementById("numOfSpam");
-  var num = e.options[e.selectedIndex].value;
   var text = document.getElementById("info").value;
   var response = grecaptcha.getResponse();
   console.log(response);
@@ -66,10 +68,42 @@ var register=function(){
     return;
   }
   if(response.length == 0){
-    document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">You haven't completed the captcha</div>";
-    return;
-  }
-  document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
+   // document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">You haven't completed the captcha</div>";
+   // return;
+ }
+
+
+
+  firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+  // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      document.getElementById("errormsg").innerHTML = errorMessage;
+      console.log(errorMessage);
+      console.log(errorCode);
+      if(error){
+        return;
+      }
+  // ...
+  });
+
+
+var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
+var profRef = dbRef.child('profiles');
+profRef.push({
+    name: name,
+    email: email,
+    companyAddress: cadd,
+    companyName: cname,
+    companyWeb: cweb,
+    tobs: tob,
+    info: text
+});
+
+
+
+document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
 }
 
 
@@ -87,12 +121,27 @@ var login = function(){
       console.log(errorCode);
   // ...
 });
+
+
+
   alert("Successfully logged in!")
    document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+    if(!user.emailVerified){
+      alert("Please verify your account from your email inbox and login again.")
+      document.getElementById("errormsg2").innerHTML = "Please verify your account from your email inbox and login again.";
+      user.sendEmailVerification().then(function() {
+  // Email sent.
+      }, function(error) {
+      alert("ERROR! " + error.message); 
+      });
+      logout();
+      return;
+    }
+
     // User is signed in.
-//window.location = "../form/index.html";
+window.location = "../dashboard";
   }
 });
 }
@@ -122,4 +171,13 @@ function isAlphaNumeric(str) {
     }
   }
   return true;
+};
+
+
+var logout = function(){
+firebase.auth().signOut().then(function() {
+  alert("Signed out");
+}).catch(function(error) {
+  alert(error.message);
+});
 };
