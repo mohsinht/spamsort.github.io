@@ -1,3 +1,4 @@
+
   var uEmail, uName, uTobs, numOfSpam;
 
   var config = {
@@ -35,6 +36,7 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
   }
   else{
     document.getElementById("lt").innerHTML = ".logout{display: none;}"
+    window.location = "../login/index.html";
   }
 });
    
