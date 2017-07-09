@@ -129,7 +129,7 @@ body {
   #logo {
        font-family: raleway;
     font-weight: 900;
-    position: fixed;
+     position: absolute;
     width: 0%;
     height: 10vh;
     background-color: transparent;
@@ -272,7 +272,7 @@ body {
 
 .box2 {
     margin: 0px;
-    position: fixed;
+    position: absolute;
     display: inline-block;
     width: 700px;
     height: 150px;
@@ -375,7 +375,7 @@ body {
       font-family: 'Raleway', sans-serif;
     font-weight: 300;
     position: absolute;
-    width: 650px;
+        width: 127px;
     height: 80vh;
     background-color: transparent;
     color: #2C3E50;
@@ -395,20 +395,20 @@ body {
     }
 
 .box3{
-    margin: 0px;
-    position: fixed;
+ margin: 0px;
+    margin-top: auto;
+    position: absolute;
     display: inline-block;
-    width: 180px;
+    width: 806px;
     height: 150px;
-    top: 60%;
-    left: 29%;
+    top: 135%;
+    left: -1%;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-  }
+}
 
 
 
@@ -468,4 +468,55 @@ display:none;
     left: 60%;
     padding: 9px 68px;
   }
+}
+
+
+
+.viewSpammer{
+    padding: 15px;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: white;
+    width: 50%;
+    margin-left: 24%;
+        max-width: 53%;
+            margin-bottom: 20px;
+}
+
+
+
+.backArrow{
+font-size: 51px;
+    line-height: 32px;
+    width: 1em;
+    height: 36px;
+    position: fixed;
+    padding: 11px;
+    padding-left: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(180deg);
+    color: white;
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+  }
+
+.backArrow:hover {
+    background: rgba(255,255,255,.5);
+}
+.backArrow:active {
+    position: relative;
+    right: 2px;
+}
+
+/* Document Styling */
+
+.containerback {
+padding-top: 2em;
+    margin: auto 6%;
 }

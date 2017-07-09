@@ -28,6 +28,37 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
     document.getElementById("name").innerHTML = uName;
     document.getElementById("utobs").innerHTML = uTobs;
     document.getElementById("num").innerHTML = numOfSpam;
+
+var spamRef = dbRef.child('spammers');
+spamRef.on("child_added", function(snap) 
+{
+  var text = [];
+  if(snap.val().addedBy === uEmail){
+      if(snap.val().first_name!==""){
+        text += "<i class=\"fa fa-user\" aria-hidden=\"true\"></i><b>  Name: </b>" + snap.val().first_name + " " + snap.val().last_name + "<br />";
+      }
+      if(snap.val().email !== ""){
+        text += "<i class=\"fa fa-user\" aria-hidden=\"true\"></i><b>  Email: </b>" + snap.val().email + "<br />";
+      }
+      if(snap.val().city !== ""){
+        text += "<i class=\"fa fa-globe\" aria-hidden=\"true\"></i><b>  City: </b>" + snap.val().city + "<br />";
+      }
+      if(snap.val().tobs !== ""){
+        text += "<i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i><b>  Type Of Business: </b>" + snap.val().tobs + "<br />";
+      }
+      if(snap.val().socialID !== ""){
+        text += "<i class=\"fa fa-id-badge\" aria-hidden=\"true\"></i><b>  Social ID: </b>" + snap.val().socialID + "<br />";
+      }
+      if(snap.val().address !== ""){
+        text += "<i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i><b>  Address: </b>" + snap.val().address + "<br />";
+      }
+      if(snap.val().description !== ""){
+        text += "<i class=\"fa  fa-info-circle\" aria-hidden=\"true\"></i><b>  Description: </b>" + snap.val().description + "<br />";
+      }
+      document.getElementById("view").innerHTML += "<div class=\"viewSpammer\" style=\"\">" +text+  "</div>";
+  }
+});
+
 });
 
 
@@ -39,11 +70,11 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
     window.location = "../login/index.html";
   }
 });
-   
 
 
 
-var logout = function(){
+
+   var logout = function(){
 firebase.auth().signOut().then(function() {
   alert("Signed out");
   window.location = "../";
