@@ -12,7 +12,7 @@
   if (user) {
   document.getElementById("lt").innerHTML = ".logout{display: inherit !important;}"
     // User is signed in.
-  window.location = "/form/";
+  window.location = "/dashboard/";
   }
   else{
     document.getElementById("lt").innerHTML = ".logout{display: none;}"
