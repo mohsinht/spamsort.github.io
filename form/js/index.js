@@ -139,7 +139,18 @@ var submitSpam = function(){
 window.location = "../login/index.html";
   }
   else{
+    var total;
     uEmail = user.email;
+    if(user.num === null){
+        total = 1;
+    }
+    else{
+        total= user.num++;
+    }
+    console.log("Total spams = " + total);
+    user.updateProfile({
+    num: total
+        });
 
   }
 });

@@ -68,8 +68,8 @@ var register=function(){
     return;
   }
   if(response.length == 0){
-   // document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">You haven't completed the captcha</div>";
-   // return;
+    document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">You haven't completed the captcha</div>";
+    return;
  }
 
 
@@ -88,7 +88,6 @@ var register=function(){
   // ...
   });
 
-
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var profRef = dbRef.child('profiles');
 profRef.push({
@@ -98,11 +97,12 @@ profRef.push({
     companyName: cname,
     companyWeb: cweb,
     tobs: tob,
-    info: text
+    info: text,
+    num: 0
 });
 
-
-
+logout();
+window.location = "/login/";
 document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
 }
 

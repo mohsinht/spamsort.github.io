@@ -25,9 +25,15 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
       numOfSpam = snap.val().num;
       //return;
     }
+    console.log(numOfSpam);
     document.getElementById("name").innerHTML = uName;
     document.getElementById("utobs").innerHTML = uTobs;
+    if(numOfSpam === undefined){
+    document.getElementById("num").innerHTML = "0";
+  }
+  else{
     document.getElementById("num").innerHTML = numOfSpam;
+  }
 });
 
 
@@ -45,7 +51,7 @@ var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 
 var logout = function(){
 firebase.auth().signOut().then(function() {
-  alert("Signed out");
+ // alert("Signed out");
   window.location = "../";
 }).catch(function(error) {
   alert(error.message);
