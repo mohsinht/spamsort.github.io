@@ -141,17 +141,6 @@ window.location = "../login/index.html";
   else{
     var total;
     uEmail = user.email;
-    if(user.num === null){
-        total = 1;
-    }
-    else{
-        total= user.num++;
-    }
-    console.log("Total spams = " + total);
-    user.updateProfile({
-    num: total
-        });
-
   }
 });
 var fname = $("input[name=first_name]").val();
@@ -195,6 +184,21 @@ spamRef.push({
     addedBy: curuser.email
 });
 
+    var profRef = dbRef.child('profiles');
+    var numOfSpam;
+    profRef.on("child_added", function(snap) 
+    {
+        console.log(snap.val());
+        numOfSpam = snap.val().num;
+        if(numOfSpam === undefined){
+            numOfSpam = 0;
+        }
+        numOfSpam++;
+        console.log("Num = " + numOfSpam)
+        if(snap.val().email === curuser.email){
+          snap.ref().update({num: numOfSpam});
+        }
+    });
 
 console.log(fname + lname + email + ph + add);
 
