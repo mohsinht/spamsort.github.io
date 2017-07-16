@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="HqMUd5zOGp_HNl-vYJP4a1-AEnfP7NSl1wPHEwXSAAw" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="application/ld+json">
 {
@@ -53,10 +54,24 @@
 
 
 <style id="newstyle"></style>
-
+    <div class = "float-menu">
+        <input type="checkbox" id="menu-toggle"/>
+        <label for="menu-toggle">
+          <i id="open" class="material-icons">menu</i>
+          <i id="close" class="material-icons">arrow_back</i>
+        </label>
+        <ul id="menu">
+          <li><a href="/form"><i class="material-icons">person_add</i>Add</a></li>
+          <li><a href="/login"><i class="material-icons">lock_open</i>Login</a></li>
+          <li><a href="/dashboard"><i class="material-icons">build</i>Dashboard</a></li>
+          <li><a href="/about"><i class="material-icons">info</i>About</a></li>
+          <li><a href="/terms"><i class="material-icons">note</i>Terms</a></li>
+       </ul>
+    </div>
+        
 
  <h1 id="logo">SpamSort</h1>
-<a href="/login" class="myButton">Submit A Spammer</a>
+
 
   <div class="title-container">
   <h1 class="title">Search using Name, Email, Social ID or Phone Number</h1>
