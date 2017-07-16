@@ -8,15 +8,17 @@
     messagingSenderId: "63768838798"
   };
   firebase.initializeApp(config);
-       firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-  document.getElementById("lt").innerHTML = ".logout{display: inherit !important;}"
-    // User is signed in.
-  window.location = "/dashboard/";
-  }
-  else{
-    document.getElementById("lt").innerHTML = ".logout{display: none;}"
-  }
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      document.getElementById("lt").innerHTML = ".logout{display: inherit !important;}"
+      document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
+      // User is signed in.
+      window.location = "/dashboard/";
+    }
+    else{
+      document.getElementById("lt").innerHTML = ".logout{display: none;}"
+      window.location = "#";
+    }
 });
    
 
@@ -88,9 +90,9 @@ var register=function(){
   // ...
   });
 
-var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
-var profRef = dbRef.child('profiles');
-profRef.push({
+  var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
+  var profRef = dbRef.child('profiles');
+  profRef.push({
     name: name,
     email: email,
     companyAddress: cadd,
@@ -99,52 +101,53 @@ profRef.push({
     tobs: tob,
     info: text,
     num: 0
-});
+  });
 
-logout();
-window.location = "/login/";
-document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
+  logout();
+  window.location = "/login/";
+  document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
 }
 
 
 
 
 var login = function(){
+
   var logEmail = document.getElementById("logEmail").value;
   var logPass = document.getElementById("logPass").value;
   firebase.auth().signInWithEmailAndPassword(logEmail, logPass).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  document.getElementById("errormsg2").innerHTML = errorMessage;
-      console.log(errorMessage);
-      console.log(errorCode);
-  // ...
-});
+    // Handle Errors here.  
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    document.getElementById("errormsg2").innerHTML = errorMessage;
+        console.log(errorMessage);
+        console.log(errorCode);
+    // ...
+  });
+  
+  var user = firebase.auth().currentUser;
 
-
-
-  alert("Successfully logged in!")
-   document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
-   firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
+  if (false) {
     if(!user.emailVerified){
-      alert("Please verify your account from your email inbox and login again.")
-      document.getElementById("errormsg2").innerHTML = "Please verify your account from your email inbox and login again.";
+       document.getElementById("errormsg2").innerHTML = "Please verify your account from your email inbox and login again.";
       user.sendEmailVerification().then(function() {
-  // Email sent.
+      // Email sent.
       }, function(error) {
-      alert("ERROR! " + error.message); 
+          alert("ERROR! " + error.message); 
+          console.log(error.message);
+    // An error happened.
       });
       logout();
-      return;
     }
-
-    // User is signed in.
-window.location = "../dashboard";
+    else{
+        document.getElementById("errormsg2").innerHTML = "<div style=\"color:green\">Logged in succesfully!</div>";
+      // User is signed in.
+        window.location = "/dashboard";
+    
+        }
   }
-});
 }
+
 
 function validateEmail(x) {
     var atpos = x.indexOf("@");
@@ -174,10 +177,12 @@ function isAlphaNumeric(str) {
 };
 
 
+
 var logout = function(){
-firebase.auth().signOut().then(function() {
-  alert("Signed out");
-}).catch(function(error) {
-  alert(error.message);
-});
+  firebase.auth().signOut().then(function() {
+    //alert("Signed out");
+  }).catch(function(error) {
+    alert(error.message);
+  });
+  window.location = "/login";
 };

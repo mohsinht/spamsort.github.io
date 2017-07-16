@@ -26,7 +26,10 @@
           uName = snap.val().name;
           uTobs = snap.val().tobs;
           numOfSpam = snap.val().num;
-  
+          
+          if(numOfSpam===undefined){
+            numOfSpam= 0;
+          }
       document.getElementById("name").innerHTML = uName;
       document.getElementById("utobs").innerHTML = uTobs;
       document.getElementById("num").innerHTML = numOfSpam;

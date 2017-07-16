@@ -772,7 +772,7 @@ font-size: 20px;
     font-size: 10px;
 }
 .box2 {
-    width:400px;
+        width: 96vw;
   }
   #logo {
     height: 60vh;
@@ -815,6 +815,7 @@ display:none;
 #result-heading{
       font-size: 1em;
     margin: 1.67em 0;
+    display:none;
 }
 
 #result{
@@ -867,6 +868,37 @@ font-size: 20px;
 
  }
 
+
+
+
+
+.bottom-bar{
+    position: fixed;
+        top: 95.6%;
+    width: 100%;
+    z-index:5;
+}
+.bottom-container{
+  background-color: #141414;
+  padding: 5px;
+  text-align: right;
 }
 
+.bottom-container a{
+  text-decoration: none;
+  color:#fff;
+      font-family: raleway;
+    font-size: 13px;
+}
+#cr{
+  float: left;
+  margin-left: 20px;
+      margin-top: 3px;
+}
 
+#separator{
+  margin-left: 6px;
+  display: inherit;
+    margin-right: 6px;
+        color: rgba(255, 255, 255, 0.2);
+}
