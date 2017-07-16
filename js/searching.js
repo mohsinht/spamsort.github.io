@@ -23,7 +23,7 @@ var search=function() {
       invalidCharacters();
       if(qr===""){
                 document.getElementById("result").innerHTML="<div style=\"color:#4B77BE\">Name is empty</div>";
-                 document.getElementById("result2").innerHTML = "Use spammer's name, business, location, phone number or anything related";
+                 document.getElementById("result2").innerHTML = "Use spammer's name, email, phone or anything related";
       }
       return ;
     }
