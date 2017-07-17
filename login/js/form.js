@@ -104,7 +104,12 @@ var register=function(){
     num: 0
   });
 
-  logout();
+  firebase.auth().signOut().then(function() {
+    //alert("Signed out");
+  }).catch(function(error) {
+    alert(error.message);
+  });
+  
   setTimeout(function() {
   window.location = "/login/#success";
 }, 5000);
