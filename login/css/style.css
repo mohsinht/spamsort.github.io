@@ -41,6 +41,7 @@
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+      margin-bottom: 18px;
 }
 .form textarea{
    font-family: "Roboto", sans-serif;
