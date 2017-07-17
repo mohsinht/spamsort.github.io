@@ -105,7 +105,9 @@ var register=function(){
   });
 
   logout();
-  window.location = "/login/";
+  setTimeout(function() {
+  window.location = "/login/#success";
+}, 5000);
   document.getElementById("errormsg").innerHTML = "<div style=\"color:green\">Thank you!, your information has been received and saved. You'll be emailed to " + email + " when your account is accepted.</div>";
 }
 
