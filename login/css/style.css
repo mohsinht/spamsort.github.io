@@ -274,9 +274,10 @@ body {
 
 .bottom-bar{
     position: fixed;
-        top: 95.6%;
+    top: 95.6%;
     width: 100%;
     z-index:5;
+    margin-left:-8px;
 }
 .bottom-container{
   background-color: #141414;
