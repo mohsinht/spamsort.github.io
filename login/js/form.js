@@ -33,7 +33,8 @@ var register=function(){
   var text = document.getElementById("info").value;
   var response = grecaptcha.getResponse();
   console.log(response);
-  if(!(isAlphaNumeric(name) && isAlphaNumeric(email) && isAlphaNumeric(tob) && isAlphaNumeric(cname) && isAlphaNumeric(cadd) && isAlphaNumeric(cweb) && isAlphaNumeric(text))){
+  console.log(isAlphaNumeric(name) && isAlphaNumeric(email) && isAlphaNumeric(tob) && isAlphaNumeric(cname) && isAlphaNumeric(cadd) && isAlphaNumeric(cweb));
+  if(!(isAlphaNumeric(name) && isAlphaNumeric(email) && isAlphaNumeric(tob) && isAlphaNumeric(cname) && isAlphaNumeric(cadd) && isAlphaNumeric(cweb))){
     document.getElementById("errormsg").innerHTML = "<div style=\"color:red\">You've entered invalid characters</div>";
     return;
   }
