@@ -167,7 +167,7 @@ function isAlphaNumeric(str) {
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
     if (!(code > 47 && code < 58) && // numeric (0-9)
-        !(code === 46 || code===45 || code===95 || code===64 || code===32) && // . - _  @ (dot, dash, underscore, at-the-rate, space) 
+        !(code === 46 || code===45 || code===95 || code===64 || code===32 || code===47 || code===58 || code===92) && // . - _  @  / : \(dot, dash, underscore, at-the-rate, space) 
         !(code > 64 && code < 91) && // upper alpha (A-Z) 
         !(code > 96 && code < 123)) { // lower alpha (a-z)
       return false;
