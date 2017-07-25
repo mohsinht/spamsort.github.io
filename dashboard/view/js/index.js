@@ -21,7 +21,7 @@
     var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
     var profRef = dbRef.child('profiles');
     profRef.on("child_added", function(snap) {
-      console.log(snap.val().email);
+      //console.log(snap.val().email);
         if(snap.val().email === uEmail){
           uName = snap.val().name;
           uTobs = snap.val().tobs;
@@ -38,7 +38,7 @@
       spamRef.on("child_added", function(snap) 
       {
         var text = [];
-        console.log(snap.val().first_name);
+        //console.log(snap.val().first_name);
       if(snap.val().addedBy === uEmail){
           if(snap.val().first_name!==""){
             text += "<i class=\"fa fa-user\" aria-hidden=\"true\"></i><b>  Name: </b>" + snap.val().first_name + " " + snap.val().last_name + "<br />";
@@ -91,3 +91,6 @@ firebase.auth().signOut().then(function() {
   alert(error.message);
 });
 };
+
+
+

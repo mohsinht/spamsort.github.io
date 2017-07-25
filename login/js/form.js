@@ -91,6 +91,20 @@ var register=function(){
   // ...
   });
 
+   firebase.auth().onAuthStateChanged(function(firebaseUser){
+
+   if(firebaseUser){
+       console.log(firebaseUser);
+       var userId = firebase.auth().currentUser.uid;
+
+
+     firebaseRef.child("users").child(userId).push({
+        name: name
+     });
+   }
+ });
+
+
   var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
   var profRef = dbRef.child('profiles');
   profRef.push({
@@ -101,8 +115,10 @@ var register=function(){
     companyWeb: cweb,
     tobs: tob,
     info: text,
-    num: 0
+    num: 0,
+    verified: false
   });
+
   firebase.auth().signOut().then(function() {
     //alert("Signed out");
   }).catch(function(error) {

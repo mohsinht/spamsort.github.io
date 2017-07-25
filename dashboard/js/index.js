@@ -14,18 +14,19 @@
   if (user) {
   document.getElementById("lt").innerHTML = ".logout{display: inherit !important;}"
   uEmail = user.email;
+  console.log(user.name);
   document.getElementById("uemail").innerHTML = uEmail;
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
  var profRef = dbRef.child('profiles');
     profRef.on("child_added", function(snap) {
-    console.log(snap.val().email);
+    //console.log(snap.val().email);
     if(snap.val().email === uEmail){
       uName = snap.val().name;
       uTobs = snap.val().tobs;
       numOfSpam = snap.val().num;
       //return;
     }
-    console.log(numOfSpam);
+    //console.log(numOfSpam);
     document.getElementById("name").innerHTML = uName;
     document.getElementById("utobs").innerHTML = uTobs;
     if(numOfSpam === undefined){
