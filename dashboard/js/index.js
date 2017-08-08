@@ -1,4 +1,4 @@
- window.location = "/verify";
+ window.location = "/account/verify";
   var uEmail, uName, uTobs, numOfSpam;
 
   var config = {
