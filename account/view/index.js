@@ -1,3 +1,13 @@
+ firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  uEmail = user.email;
+  
+ displaySpammers(uEmail);
+}
+});
+
+
+
 function displaySpammers(uEmail){
 	count=0;
 	var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
