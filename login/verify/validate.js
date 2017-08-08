@@ -1,4 +1,4 @@
-
+ window.location = "/account/verify";
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDcvxKgsZCAaeRfqDe0PlPcgESZDwuJwAU",
