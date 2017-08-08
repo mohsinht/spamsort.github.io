@@ -1,0 +1,194 @@
+#success_message{ display: none;}
+
+.box2 {
+      margin-top: 220px;
+    position: relative;
+    display: flex;
+    width: 958px;
+    height: 733px;
+        top: 20%;
+    left: 14%;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+  /* Create the hidden pseudo-element */
+  /* include the shadow for the end state */
+  .box2:after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+  }
+
+  .box2:hover {
+    -webkit-transform: scale(1.05, 1.05);
+transform: scale(1.05, 1.05);
+  }
+
+  .box2:hover:after {
+      opacity: 1
+  }
+
+body {
+  background: #17EAD9; /* fallback for old browsers */
+
+  font-family: "raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+
+    #logo {
+       font-family: raleway;
+    font-weight: 900;
+    position: absolute;
+    width: 0%;
+    height: 10vh;
+    background-color: transparent;
+    color: #2C3E50;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: background-color 1.25s ease-in-out;
+    transition: background-color 1.25s ease-in-out;
+    left: 50%;
+    top: 0%;
+    -webkit-transform: translateY(50%);
+    transform: translateY(88%);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+    font-size: 53px;
+}
+.title-container {
+  position: absolute;
+    top: 20%;
+  left: 50%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.title-container .title {
+
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+      margin-top: 58px;
+  
+  color: #6078EA;
+}
+
+
+.well {
+    background-image: -webkit-linear-gradient(top,#ffffff  0,#ffffff  100%);
+    background-image: -o-linear-gradient(top,#ffffff  0,#ffffff  100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff ),to(#ffffff ));
+    background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+    border-color: #ffffff;
+    }
+
+    .myButton {
+  background-color:transparent;
+  -moz-border-radius:22px;
+  -webkit-border-radius:22px;
+  border-radius:22px;
+  border:5px solid #2C3E50;
+  display:absolute;
+  cursor:pointer;
+  color:#2C3E50;
+  font-family:raleway;
+  font-weight:900;
+  font-size:18px;
+  padding:12px 29px;
+  text-decoration: none;
+  position:absolute;
+    top: 5%;
+    left: 70%;
+
+
+}
+.myButton:hover {
+  background-color:transparent;
+  border-radius:15px;
+  border:6px
+  font-size:19px;
+    text-decoration: none;
+}
+.myButton:active {
+   position:fixed;
+   border-radius:30px;
+   font-size:18px;
+    text-decoration: none;
+}
+
+
+.container {
+  z-index:-1;
+    margin-top: 140px;
+    background-color: white;
+        box-shadow: 0px 20px 20px 0px black;
+
+}
+
+
+
+/* Arrow Styling */
+.backArrow{
+font-size: 51px;
+    line-height: 26px;
+    width: 1em;
+    height: 1em;
+    padding: 11px;
+    padding-left: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(180deg);
+    color: white;
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+  }
+
+.backArrow:hover {
+    background: rgba(255,255,255,.5);
+}
+.backArrow:active {
+    position: relative;
+    right: 2px;
+}
+
+/* Document Styling */
+
+.containerback {
+padding-top: 2em;
+    margin: auto 6%;
+}

@@ -2,6 +2,12 @@
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
 
+dbRef.child('profiles').orderByChild('email').equalTo('mohxinhayat@gmail.com').on("value", function(snapshot) {
+    //console.log(snapshot.val());
+    snapshot.forEach(function(data) {
+        console.log(data.val());
+    });
+});
 //-----------------Main Search Function------------
 var search=function() {
 

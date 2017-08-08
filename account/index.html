@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Spamsort Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDcvxKgsZCAaeRfqDe0PlPcgESZDwuJwAU",
+        authDomain: "friendlychat-c4e05.firebaseapp.com",
+        databaseURL: "https://friendlychat-c4e05.firebaseio.com",
+        projectId: "friendlychat-c4e05",
+        storageBucket: "friendlychat-c4e05.appspot.com",
+        messagingSenderId: "63768838798"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+
+  <style id="newStyle">.loading{display:block};</style>
+  <div class="loading">
+  <div class="loading-spinner"></div>
+  </div>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Dashboard</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="../">Search Spammers</a></li>
+                  <li><a href="logout">Logout <span class="glyphicon glyphicon-log-out" aria-hidden="true" style="padding-left: 5px"></span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="logo">Spamsort</h1>
+            <div class="box row">
+              <div class="col-md-8 db-name"><div id="uName">Your Name</div>
+                <div class="details">
+                  <div id="userEmail"><span class="glyphicon glyphicon-envelope db-icon" aria-hidden="true"></span>
+                 </div>
+                  <div class="bb">
+                  <div id="userBusiness"><span class="glyphicon glyphicon-briefcase db-icon" aria-hidden="true" style="top:3.5px;"></span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="db-num" id="numOfSpam">0</div>
+                <div class="db-subnum">spam cases added</div>
+
+
+              </div>
+            </div>
+
+
+            <div class="row">
+                <a href="add">
+                <div class="col-md-3 col-md-offset-1 box">
+                  <span class="glyphicon glyphicon-plus db-button" aria-hidden="true"></span>
+                  <div class="db-detail">Add a Spammer</div>
+                </div>
+                </a>
+                <a href="view">
+                <div class="col-md-3 col-md-offset-1 box">
+                  <span class="glyphicon glyphicon-eye-open db-button" aria-hidden="true"></span>
+                  <div class="db-detail">Your Spammers</div>
+                </div>  
+                </a>  
+                <a href="manage">          
+                <div class="col-md-3 col-md-offset-1 box">
+                  <span class="glyphicon glyphicon-cog db-button" aria-hidden="true"></span>
+                  <div class="db-detail">Manage Spammers</div>
+                </div>  
+                </a>
+            </div>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Copyrights &copy <a href="http://spamsort.com">Spamsort</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
