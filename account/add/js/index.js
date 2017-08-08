@@ -179,7 +179,7 @@ spamRef.push({
         if(snap.val().email === curuser.email){
           snap.ref().update({num: numOfSpam});
         }
-        alert("The spammer has been added!");
+       // alert("The spammer has been added!");
 
         window.location = "../";
     });
