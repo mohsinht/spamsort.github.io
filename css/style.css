@@ -763,6 +763,12 @@ font-size: 20px;
     left: -140%;
     top: -33%;
 }
+
+#cr{
+  display:none;
+}
+
+.bottom-container { text-align: center;}
 }
 
 
