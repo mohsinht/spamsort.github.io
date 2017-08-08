@@ -19,7 +19,7 @@ dbRef.child('profiles').orderByChild('email').equalTo(uEmail).on("value", functi
         });
 });
 console.log(window.location.href);
-if(window.location.href ==="http://127.0.0.1:8087/account/view/"){
+if(window.location.href ==="http://spamsort.com/account/view/"){
   displaySpammers(uEmail);
 }
 });
