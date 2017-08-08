@@ -183,5 +183,5 @@ spamRef.push({
 
 alert("The spammer has been added!");
 
-window.location = "../account";
+window.location = "../";
 }
