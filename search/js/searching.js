@@ -119,7 +119,7 @@ var CantfoundSpammer = function(){
 
 var foundSpammer = function(){
    document.getElementById("result").innerHTML = "Spammer Found";
-   document.getElementById("detailsbutton").innerHTML = "<button class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#basicModal\">view details</button>";
+   document.getElementById("detailsbutton").innerHTML = "<button class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#basicModal\">View details</button>";
              document.getElementById("newstyle").innerHTML = "#detailsbutton{display:block} body{background-color: #2ECC71 !important;} #result-heading,#result2{display:none;}   .box2 {    } #result{color:#92F22A;font-family: raleway;font-weight:900 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: block;}";
   
 }
