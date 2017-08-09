@@ -3,6 +3,9 @@ firebase.auth().onAuthStateChanged(function(user) {
   uEmail = user.email;
   uEmV = user.emailVerified;
 }
+else{
+	window.location = "../login/";
+}
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 dbRef.child('profiles').orderByChild('email').equalTo(uEmail).on("value", function(snapshot) {
 	document.getElementById("newStyle").innerHTML=".loading{display:none};"
