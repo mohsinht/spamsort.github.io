@@ -185,7 +185,7 @@ var displayInfo = function(obj){
   document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>Social ID: </b>" + obj.socialID + "</div>"; 
 }
   if(obj.description !== ""){
-  document.getElementById("details").innerHTML += "<div class= \"col-md-12 col-md-offset-1\"><br><b>Description: </b>" + "<div style=\"padding-left:0;\">" + obj.description + "</div>"; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-10 col-md-offset-1\"><br><b>Description: </b>" + "<div style=\"padding-left:0;\">" + obj.description + "</div>"; 
 }
 }
 
