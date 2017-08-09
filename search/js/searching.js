@@ -1,14 +1,6 @@
- window.location = "/search";   
 //-----------------Firebase Api--------------------
 var dbRef = new Firebase('https://friendlychat-c4e05.firebaseio.com/');
 var spamRef = dbRef.child('spammers');
-
-dbRef.child('profiles').orderByChild('email').equalTo('mohxinhayat@gmail.com').on("value", function(snapshot) {
-    //console.log(snapshot.val());
-    snapshot.forEach(function(data) {
-        console.log(data.val());
-    });
-});
 //-----------------Main Search Function------------
 var search=function() {
 
@@ -30,7 +22,7 @@ var search=function() {
       invalidCharacters();
       if(qr===""){
                 document.getElementById("result").innerHTML="<div style=\"color:#4B77BE\">Name is empty</div>";
-                 document.getElementById("result2").innerHTML = "Use spammer's name, email, phone or anything related";
+                document.getElementById("result2").innerHTML = "Use spammer's name, email, phone or anything related";
       }
       return ;
     }
@@ -121,12 +113,14 @@ var CantfoundSpammer = function(){
   document.getElementById("result2").innerHTML = "Try any other keyword to make your search wider";
   document.getElementById("newstyle").innerHTML = " .box2 {width: 700px;height: 150px;}";
   document.getElementById("newstyle").innerHTML = "body{background-color: #E74C3C !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: none;}";
+ 
 }
 
 
 var foundSpammer = function(){
-   document.getElementById("result").innerHTML = "Found";
-             document.getElementById("newstyle").innerHTML = "body{background-color: #2ECC71 !important;} #result-heading,#result2{display:none;}   .box2 {    top: 55%;width: 150px;height: 150px;} #result{color:#92F22A;font-family: raleway;font-weight:900 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: block;}";
+   document.getElementById("result").innerHTML = "Spammer Found";
+   document.getElementById("detailsbutton").innerHTML = "<button class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#basicModal\">view details</button>";
+             document.getElementById("newstyle").innerHTML = "#detailsbutton{display:block} body{background-color: #2ECC71 !important;} #result-heading,#result2{display:none;}   .box2 {    } #result{color:#92F22A;font-family: raleway;font-weight:900 !important;} .title-container .title-down{ color: #E4F1FE !important;} .title-container .title{ color: #E4F1FE !important;}  a.btn {display: block;}";
   
 }
 
@@ -173,25 +167,25 @@ var nameKey = function(key){
 var displayInfo = function(obj){
   document.getElementById("details").innerHTML="";
   if(obj.first_name !=="" || obj.last_name !==""){
-  document.getElementById("popupHeading").innerHTML = obj.first_name + " " + obj.last_name;
+  document.getElementById("details").innerHTML = "<div class= \"col-md-12 spname\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Spammer Name\"><span class=\"glyphicon glyphicon-user nameicon\" aria-hidden=\"true\"></span><span class=\"glyphicon glyphicon-remove nameicon2\" aria-hidden=\"true\"></span><span class=\"glyphicon glyphicon-warning-sign nameicon3\" aria-hidden=\"true\"></span><b style=\"text-decoration: underline;text-decoration-color: red;\">" + obj.first_name + " " + obj.last_name + "</b></div>";
 }
   if(obj.email !== ""){
-  document.getElementById("details").innerHTML = "<b>Email: </b>" + obj.email; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>Email: </b>" + obj.email + "</div>"; 
 }
   if(obj.phone !== ""){
-  document.getElementById("details").innerHTML += "<br><b>Phone: </b>" + obj.phone; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>Phone: </b>" + obj.phone + "</div>"; 
 }
     if(obj.city !== ""){
-  document.getElementById("details").innerHTML += "<br><b>City: </b>" + obj.city; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>City: </b>" + obj.city + "</div>"; 
 }
   if(obj.tobs !== ""){
-  document.getElementById("details").innerHTML += "<br><b>Type of Business: </b>" + obj.tobs; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>Type of Business: </b>" + obj.tobs + "</div>";  
 }
   if(obj.socialID !== ""){
-  document.getElementById("details").innerHTML += "<br><b>Social ID: </b>" + obj.socialID; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-5 col-md-offset-1\"><b>Social ID: </b>" + obj.socialID + "</div>"; 
 }
   if(obj.description !== ""){
-  document.getElementById("details").innerHTML += "<br><b>Description: </b><br>" + "<div style=\"padding-left:1em;\">" + obj.description; 
+  document.getElementById("details").innerHTML += "<div class= \"col-md-12 col-md-offset-1\"><br><b>Description: </b>" + "<div style=\"padding-left:0;\">" + obj.description + "</div>"; 
 }
 }
 

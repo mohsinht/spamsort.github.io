@@ -795,6 +795,13 @@ font-size: 20px;
 
 
  @media only screen and (max-width: 500px) {
+  .title-container {
+    width: 100%;
+  }
+  .field-container {
+    width: 91%;
+        margin-right: 5%;
+  }
 .myButton {
     left: 25%;
     width: 42%;
@@ -819,14 +826,22 @@ font-size: 20px;
           transition-delay: 0.25s;
 
 }
-
+.icons-container {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    z-index: 100;
+  }
 .title-container .title {
-        font-size:25px;
+        font-size:19px;
 }
 
 
 .title-container .title-down {
-font-size: 25px;
+font-size: 19px;
   }
 
   .field {
