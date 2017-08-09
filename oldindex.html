@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,900" rel="stylesheet">
+  <meta name="google-site-verification" content="HqMUd5zOGp_HNl-vYJP4a1-AEnfP7NSl1wPHEwXSAAw" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "name": "SpamSort",
+  "@type": "Search Engine",
+  "url": "http://spamsort.com/",
+  "description": "A simple website to list spammers and frauds you come across",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+92-3364256811",
+    "contactType": "customer service"
+  }
+}
+</script>
+  <title>SpamSort - Search Spammers, Report Spammers</title>
+  <meta name="description=" content="SpamSort is a spam listing website. List Emails, Phone numbers, NICs, Names, Social IDs or more">
+  
+  <link rel="stylesheet" href="css/min-style.css">
+
+  <link rel='stylesheet prefetch' href='css/yxqdlj.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDcvxKgsZCAaeRfqDe0PlPcgESZDwuJwAU",
+    authDomain: "friendlychat-c4e05.firebaseapp.com",
+    databaseURL: "https://friendlychat-c4e05.firebaseio.com",
+    projectId: "friendlychat-c4e05",
+    storageBucket: "friendlychat-c4e05.appspot.com",
+    messagingSenderId: "63768838798"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+<style id="newstyle"></style>
+    <div class = "float-menu">
+        <input type="checkbox" id="menu-toggle"/>
+        <label for="menu-toggle">
+          <i id="open" class="material-icons">menu</i>
+          <i id="close" class="material-icons">arrow_back</i>
+        </label>
+        <ul id="menu">
+          <li><a href="/account"><i class="material-icons">person_add</i>Add</a></li>
+          <li><a href="/account/login"><i class="material-icons">lock_open</i>Login</a></li>
+          <li><a href="/account"><i class="material-icons">build</i>Dashboard</a></li>
+          <li><a href="/about"><i class="material-icons">info</i>About</a></li>
+          <li><a href="/terms"><i class="material-icons">note</i>Terms</a></li>
+       </ul>
+    </div>
+        
+
+ <h1 id="logo">SpamSort</h1>
+
+
+  <div class="title-container">
+  <div class="col-xs-12">
+  <h1 class="title">Search using Name, Email, Social ID or Phone Number</h1>
+
+  <h1 class="title-down">Going through our Spammers list...</h1>
+</div>
+</div>
+<fieldset class="field-container">
+  <input type="text" id="text" placeholder="Search Spammers..." class="field" onKeyDown="setTimeout(search, 0)"/>
+  <div class="icons-container">
+    <div class="icon-search"></div>
+    <div class="icon-close">
+      <div class="x-up"></div>
+      <div class="x-down"></div>
+    </div>
+  </div>
+</fieldset>
+
+
+<div class="box2">
+<div class="results">
+<h1 id="result-heading">Result:</h1>
+
+<p id="result" style="left: -274%;
+    top: 10%; font-size:25px; font-weight: 500; text-align: center"></p>
+<p id="result2" style="left: -274%;
+    top: 50%; font-size:18px; font-weight: 500; text-align: center"></p>
+
+</div>
+</div>
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+ 
+<script>
+</script>
+<script src="js/searching.js"></script>
+
+
+  <a class="btn trigger" href="javascript:;">Details</a>
+<div class="modal-wrapper">
+  <div class="modal">
+    <div class="head">
+      <a class="btn-close trigger" href="javascript:;"></a>
+    </div>
+    <div class="content">
+    <div style="
+    position: absolute;
+    left: 58%;
+    top: 16%;
+    align-content: center;
+    text-align: center;
+    font-size: 43px;
+    font-family: raleway;
+    font-weight: 900;
+    color: #E74C3C;
+"><p style="margin-bottom: -100px;" class="masm">SPAMMER</p><br>
+  <p class="masm">ALERT!</p>
+</div>
+    <p id="popupHeading" style="font-weight: 900;    font-size: 26px;margin-top: -18px;}"></p>
+    <p id="details" style="    line-height: 1.5;"></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="bottom-bar">
+  <div class="bottom-container">
+    <a id="cr" href="#">Spamsort.com &copy; 2017</a>
+    <a id="linkf1" href="/about">About <p id="separator">-</p></a>
+    <a id="linkf2" href="/terms">Terms <p id="separator">-</p></a>
+    <a id="linkf3" href="/account/login">Login <p id="separator">-</p></a>
+    <a id="linkf4" href="/account/login">Register <p id="separator">-</p></a>
+    <a id="linkf5" href="/account">Dashboard</a>
+  </div>
+</div>
+
+</body>
+</html>

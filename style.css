@@ -161,7 +161,8 @@ body {
   .mastfoot,
   .cover-container {
     width: 700px;
-        left: -15px;
+    
+    left: 2.5px;
   }
 }
 
@@ -459,4 +460,11 @@ body {
   }
   .nothingfound{
     font-size:20px;
+  }
+
+
+  .searchButton{
+    background: #2C3E50;
+    color: #fff;
+    margin-top: 30px;
   }
