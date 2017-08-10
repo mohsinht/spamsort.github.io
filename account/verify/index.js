@@ -26,6 +26,8 @@ dbRef.child('profiles').orderByChild('email').equalTo(user.email).on("value", fu
         displayInfo("About", data.val().info);
       	if(data.val().verified){
       		verifiedAccount();
+        //console.log("Num = " + numOfSpam)
+          data.ref().update({emV: "true"});
       	}
         });
 });
@@ -52,6 +54,8 @@ function verifiedEmail(email){
 	var val = parseInt(el.innerText);
 	var class_name = "hide";
 	el.className = ' ' + class_name;
+
+
 
 	document.getElementById("progressBar").innerHTML = "<div class=\"progress-bar progress-bar-striped active\" role=\"progressbar\" aria-valuenow=\"66\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 66%\">";
     document.getElementById("progressBar").innerHTML += "<span class=\"sr-only\">33% Complete</span>"

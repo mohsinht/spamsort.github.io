@@ -81,6 +81,7 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error
     tobs: tob,
     info: text,
     num: 0,
+    emV: false,
     verified: false
   });
 
