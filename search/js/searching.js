@@ -40,7 +40,7 @@ var search=function() {
       {
         var key = childSnapshot.key(); //Key is the child name, like "name", "email" etc.
         var childData = childSnapshot.val(); //Value inside chil
-        if(typeof childData ==='string' )
+        if(typeof childData ==='string' && key!=="addedBy")
         {
           for(var i=0;i<query.length;i++)
           {
