@@ -477,3 +477,6 @@ body {
 #doorbell-powered-by{
 	display:none !important;	
 }
+.shepherd-content{
+    text-shadow: none;
+}
