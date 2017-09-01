@@ -468,3 +468,12 @@ body {
     color: #fff;
     margin-top: 30px;
   }
+ 
+
+#doorbell-form{
+	text-shadow: none !important;
+}
+
+#doorbell-powered-by{
+	display:none !important;	
+}
