@@ -118,3 +118,9 @@
 .cover-heading{
   margin-top:-50px;
 }
+
+@media (min-width: 992px){
+  .mastfoot{
+        left: -22px;
+  }
+}
