@@ -480,3 +480,7 @@ body {
 .shepherd-content{
     text-shadow: none;
 }
+#intro-text{
+    color: #333;
+    padding-bottom: 11px;
+}
