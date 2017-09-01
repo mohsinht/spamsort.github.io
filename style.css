@@ -484,3 +484,12 @@ body {
     color: #333;
     padding-bottom: 11px;
 }
+
+cloudflare-app[app="before-you-go"] byg-dialog-content-text > *:first-child {
+    margin-top: 0;
+    margin-left: 50px;
+}
+
+cloudflare-app[app="before-you-go"][data-visibility="visible"] {
+    display: block;
+}
