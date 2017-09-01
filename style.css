@@ -491,5 +491,5 @@ cloudflare-app[app="before-you-go"] byg-dialog-content-text > *:first-child {
 }
 
 cloudflare-app[app="before-you-go"][data-visibility="visible"] {
-    display: block;
+    text-shadow:none;
 }
