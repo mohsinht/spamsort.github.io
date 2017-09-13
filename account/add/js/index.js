@@ -137,7 +137,7 @@ var sid= $("input[name=website]").val();
 var info= document.getElementById("desc").value;
 
 if((fname==="" || lname==="") && email==="" && ph==="" &&  sid===""){
-    alert("Fill in atlease Name, email, ph No or social ID");
+    alert("Please type Spammer's Name, Social ID, Email or Phone Number.");
     return;
 }
 if(info.length<20){
