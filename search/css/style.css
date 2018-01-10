@@ -402,3 +402,8 @@ body.is-focus {
 .masthead-nav > li > a {
   color:#fff !important;
 }
+
+.masthead {
+  position: relative;
+  top: 10px !important;
+}

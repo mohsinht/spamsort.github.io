@@ -138,7 +138,7 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: relative;
-    top: 0;
+    top: 0px;
   }
   .mastfoot {
         position: relative;
